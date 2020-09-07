@@ -3,11 +3,11 @@ let app = new PIXI.Application({
 })
 document.body.appendChild(app.view)
 
-app.loader.add("assets/models/buster_drone/scene.gltf")
+app.loader.add("assets/buster_drone/scene.gltf")
 
 app.loader.load((loader, resources) => {
   let model = app.stage.addChild(
-    PIXI3D.Model.from(resources["assets/models/buster_drone/scene.gltf"].gltf))
+    PIXI3D.Model.from(resources["assets/buster_drone/scene.gltf"].gltf))
 
   /* Adds a point light to the main lighting environment.*/
   let pointLight = Object.assign(new PIXI3D.Light(), {
