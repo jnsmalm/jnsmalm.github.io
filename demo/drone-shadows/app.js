@@ -31,7 +31,7 @@ app.loader.load((loader, resources) => {
   PIXI3D.LightingEnvironment.main.lights.push(directionalLight)
 
   let softness = 1
-  if (!PIXI3D.ShadowSupport.supportsMediumQuality()) {
+  if (!PIXI3D.ShadowSupport.supportsMediumQuality(app.renderer)) {
     softness = 0
   }
   let shadowCastingLight = new PIXI3D.ShadowCastingLight(
