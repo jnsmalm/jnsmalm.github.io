@@ -30,8 +30,12 @@ app.loader.load((loader, resources) => {
   directionalLight.rotationQuaternion.setEulerAngles(45, 45, 0)
   PIXI3D.LightingEnvironment.main.lights.push(directionalLight)
 
+  let softness = 1
+  if (!PIXI3D.ShadowSupport.supportsMediumQuality()) {
+    softness = 0
+  }
   let shadowCastingLight = new PIXI3D.ShadowCastingLight(
-    app.renderer, directionalLight, 512, 15, 1, PIXI3D.ShadowQuality.medium)
+    app.renderer, directionalLight, 512, 15, softness, PIXI3D.ShadowQuality.medium)
 
   let shadowPass = PIXI3D.ShadowRenderPass.addAsRenderPass(app.renderer)
   shadowPass.lights.push(shadowCastingLight)
