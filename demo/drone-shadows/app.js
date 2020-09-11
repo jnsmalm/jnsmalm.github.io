@@ -34,7 +34,7 @@ app.loader.load((loader, resources) => {
   /* Creates a shadow casting light. Also creates the shadow render pass, adds 
   the casting light and enables shadows for the model.*/
   let softness = 1
-  if (!PIXI3D.ShadowSupport.isMediumQualitySupported(app.renderer)) {
+  if (!PIXI3D.ShadowCastingLight.isMediumQualitySupported(app.renderer)) {
     softness = 0
   }
   let shadowCastingLight = new PIXI3D.ShadowCastingLight(
