@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>PickingHitArea | Pixi3D - v0.6.0</title>
+	<title>PickingHitArea | Pixi3D - v0.7.0</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">Pixi3D - v0.6.0</a>
+					<a href="../index.html" class="title">Pixi3D - v0.7.0</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -69,8 +69,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Hit area which uses the shape of a mesh to determine interaction. Only works
-						correctly when the specified mesh is rendered using the main camera.</p>
+						<p>Hit area which uses the shape of an object to determine interaction.</p>
 					</div>
 				</div>
 			</section>
@@ -102,6 +101,7 @@
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="pickinghitarea.html#_manager" class="tsd-kind-icon">_manager</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="pickinghitarea.html#camera" class="tsd-kind-icon">camera</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="pickinghitarea.html#id" class="tsd-kind-icon">id</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="pickinghitarea.html#object" class="tsd-kind-icon">object</a></li>
 							</ul>
@@ -121,18 +121,18 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Picking<wbr>Hit<wbr>Area<span class="tsd-signature-symbol">(</span>renderer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Renderer</span>, object<span class="tsd-signature-symbol">: </span><a href="mesh3d.html" class="tsd-signature-type">Mesh3D</a><span class="tsd-signature-symbol"> | </span><a href="model.html" class="tsd-signature-type">Model</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="pickinghitarea.html" class="tsd-signature-type">PickingHitArea</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Picking<wbr>Hit<wbr>Area<span class="tsd-signature-symbol">(</span>renderer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Renderer</span>, object<span class="tsd-signature-symbol">: </span><a href="mesh3d.html" class="tsd-signature-type">Mesh3D</a><span class="tsd-signature-symbol"> | </span><a href="model.html" class="tsd-signature-type">Model</a>, camera<span class="tsd-signature-symbol">?: </span><a href="camera.html" class="tsd-signature-type">Camera</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="pickinghitarea.html" class="tsd-signature-type">PickingHitArea</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/jnsmalm/pixi3d/blob/94bdf82/src/picking/picking-hitarea.ts#L14">src/picking/picking-hitarea.ts:14</a></li>
+									<li>Defined in <a href="https://github.com/jnsmalm/pixi3d/blob/dca494b/src/picking/picking-hitarea.ts#L14">src/picking/picking-hitarea.ts:14</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Creates a new hitarea using the specified mesh.</p>
+									<p>Creates a new hitarea using the specified object.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -141,7 +141,7 @@
 									<h5>renderer: <span class="tsd-signature-type">Renderer</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
-											<p>The renderer which has the picking manager plugin.</p>
+											<p>The renderer to use.</p>
 										</div>
 									</div>
 								</li>
@@ -150,6 +150,14 @@
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
 											<p>The model or mesh to test for interaction.</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> camera: <a href="camera.html" class="tsd-signature-type">Camera</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The camera to use when rendering the object.</p>
 										</div>
 									</div>
 								</li>
@@ -167,9 +175,24 @@
 					<div class="tsd-signature tsd-kind-icon">_manager<span class="tsd-signature-symbol">:</span> <a href="pickingmanager.html" class="tsd-signature-type">PickingManager</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jnsmalm/pixi3d/blob/94bdf82/src/picking/picking-hitarea.ts#L11">src/picking/picking-hitarea.ts:11</a></li>
+							<li>Defined in <a href="https://github.com/jnsmalm/pixi3d/blob/dca494b/src/picking/picking-hitarea.ts#L11">src/picking/picking-hitarea.ts:11</a></li>
 						</ul>
 					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="camera" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> camera</h3>
+					<div class="tsd-signature tsd-kind-icon">camera<span class="tsd-signature-symbol">:</span> <a href="camera.html" class="tsd-signature-type">Camera</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/jnsmalm/pixi3d/blob/dca494b/src/picking/picking-hitarea.ts#L22">src/picking/picking-hitarea.ts:22</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The camera to use when rendering the object.</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="id" class="tsd-anchor"></a>
@@ -177,12 +200,12 @@
 					<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Uint8Array</span><span class="tsd-signature-symbol"> = PickingId.next()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jnsmalm/pixi3d/blob/94bdf82/src/picking/picking-hitarea.ts#L14">src/picking/picking-hitarea.ts:14</a></li>
+							<li>Defined in <a href="https://github.com/jnsmalm/pixi3d/blob/dca494b/src/picking/picking-hitarea.ts#L14">src/picking/picking-hitarea.ts:14</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The id which maps to the mesh.</p>
+							<p>The id which maps to the object.</p>
 						</div>
 					</div>
 				</section>
@@ -192,7 +215,7 @@
 					<div class="tsd-signature tsd-kind-icon">object<span class="tsd-signature-symbol">:</span> <a href="mesh3d.html" class="tsd-signature-type">Mesh3D</a><span class="tsd-signature-symbol"> | </span><a href="model.html" class="tsd-signature-type">Model</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jnsmalm/pixi3d/blob/94bdf82/src/picking/picking-hitarea.ts#L21">src/picking/picking-hitarea.ts:21</a></li>
+							<li>Defined in <a href="https://github.com/jnsmalm/pixi3d/blob/dca494b/src/picking/picking-hitarea.ts#L22">src/picking/picking-hitarea.ts:22</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -214,7 +237,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/jnsmalm/pixi3d/blob/94bdf82/src/picking/picking-hitarea.ts#L25">src/picking/picking-hitarea.ts:25</a></li>
+									<li>Defined in <a href="https://github.com/jnsmalm/pixi3d/blob/dca494b/src/picking/picking-hitarea.ts#L26">src/picking/picking-hitarea.ts:26</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -244,6 +267,9 @@
 				<ul class="before-current">
 					<li class=" tsd-kind-enum">
 						<a href="../enums/lighttype.html" class="tsd-kind-icon">Light<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="../enums/shadowquality.html" class="tsd-kind-icon">Shadow<wbr>Quality</a>
 					</li>
 					<li class=" tsd-kind-enum">
 						<a href="../enums/standardmaterialalphamode.html" class="tsd-kind-icon">Standard<wbr>Material<wbr>Alpha<wbr>Mode</a>
@@ -314,6 +340,9 @@
 								<a href="pickinghitarea.html#_manager" class="tsd-kind-icon">_manager</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="pickinghitarea.html#camera" class="tsd-kind-icon">camera</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="pickinghitarea.html#id" class="tsd-kind-icon">id</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
@@ -328,6 +357,12 @@
 				<ul class="after-current">
 					<li class=" tsd-kind-class">
 						<a href="pickingmanager.html" class="tsd-kind-icon">Picking<wbr>Manager</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="shadowcastinglight.html" class="tsd-kind-icon">Shadow<wbr>Casting<wbr>Light</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="shadowrenderpass.html" class="tsd-kind-icon">Shadow<wbr>Render<wbr>Pass</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="skin.html" class="tsd-kind-icon">Skin</a>

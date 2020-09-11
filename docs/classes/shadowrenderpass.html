@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>glTFAsset | Pixi3D - v0.7.0</title>
+	<title>ShadowRenderPass | Pixi3D - v0.7.0</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="gltfasset.html">glTFAsset</a>
+					<a href="shadowrenderpass.html">ShadowRenderPass</a>
 				</li>
 			</ul>
-			<h1>Class glTFAsset</h1>
+			<h1>Class ShadowRenderPass</h1>
 		</div>
 	</div>
 </header>
@@ -69,7 +69,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>glTF assets are JSON files plus supporting external data.</p>
+						<p>Pass used for rendering shadows.</p>
 					</div>
 				</div>
 			</section>
@@ -77,8 +77,14 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">glTFAsset</span>
+						<span class="target">ShadowRenderPass</span>
 					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel">
+				<h3>Implements</h3>
+				<ul class="tsd-hierarchy">
+					<li><span class="tsd-signature-type">RenderPass</span></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -88,31 +94,27 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="gltfasset.html#constructor" class="tsd-kind-icon">constructor</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section tsd-is-private tsd-is-private-protected">
-							<h3>Properties</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="gltfasset.html#_buffers" class="tsd-kind-icon">_buffers</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="gltfasset.html#_descriptor" class="tsd-kind-icon">_descriptor</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="gltfasset.html#_images" class="tsd-kind-icon">_images</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="shadowrenderpass.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
-							<h3>Accessors</h3>
+							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="gltfasset.html#buffers" class="tsd-kind-icon">buffers</a></li>
-								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="gltfasset.html#descriptor" class="tsd-kind-icon">descriptor</a></li>
-								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="gltfasset.html#images" class="tsd-kind-icon">images</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="shadowrenderpass.html#_filter" class="tsd-kind-icon">_filter</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="shadowrenderpass.html#_shader" class="tsd-kind-icon">_shader</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="shadowrenderpass.html#_state" class="tsd-kind-icon">_state</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="shadowrenderpass.html#lights" class="tsd-kind-icon">lights</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="shadowrenderpass.html#name" class="tsd-kind-icon">name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="shadowrenderpass.html#renderer" class="tsd-kind-icon">renderer</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="gltfasset.html#getembeddedbuffer" class="tsd-kind-icon">get<wbr>Embedded<wbr>Buffer</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="gltfasset.html#isembeddedresource" class="tsd-kind-icon">is<wbr>Embedded<wbr>Resource</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="gltfasset.html#load" class="tsd-kind-icon">load</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="shadowrenderpass.html#clear" class="tsd-kind-icon">clear</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="shadowrenderpass.html#enableshadows" class="tsd-kind-icon">enable<wbr>Shadows</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="shadowrenderpass.html#render" class="tsd-kind-icon">render</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="shadowrenderpass.html#addasrenderpass" class="tsd-kind-icon">add<wbr>AsRender<wbr>Pass</a></li>
 							</ul>
 						</section>
 					</div>
@@ -124,223 +126,238 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new glTFAsset<span class="tsd-signature-symbol">(</span>descriptor<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="gltfasset.html" class="tsd-signature-type">glTFAsset</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Shadow<wbr>Render<wbr>Pass<span class="tsd-signature-symbol">(</span>renderer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Renderer</span>, name<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="shadowrenderpass.html" class="tsd-signature-type">ShadowRenderPass</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/jnsmalm/pixi3d/blob/dca494b/src/gltf/gltf-asset.ts#L9">src/gltf/gltf-asset.ts:9</a></li>
+									<li>Defined in <a href="https://github.com/jnsmalm/pixi3d/blob/dca494b/src/shadow/shadow-render-pass.ts#L35">src/shadow/shadow-render-pass.ts:35</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Creates a new glTF asset using the specified JSON descriptor. The resources
-									(buffers and images) will not be loaded automatically.</p>
+									<p>Creates a new shadow render pass using the specified renderer.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>descriptor: <span class="tsd-signature-type">any</span></h5>
+									<h5>renderer: <span class="tsd-signature-type">Renderer</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
-											<p>The JSON descriptor to create the asset from.</p>
+											<p>The renderer to use.</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> name: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;shadow&quot;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The name for the render pass.</p>
 										</div>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="gltfasset.html" class="tsd-signature-type">glTFAsset</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="shadowrenderpass.html" class="tsd-signature-type">ShadowRenderPass</a></h4>
 						</li>
 					</ul>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-private tsd-is-private-protected">
-				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="_buffers" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _buffers</h3>
-					<div class="tsd-signature tsd-kind-icon">_buffers<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ArrayBuffer</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/jnsmalm/pixi3d/blob/dca494b/src/gltf/gltf-asset.ts#L7">src/gltf/gltf-asset.ts:7</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="_descriptor" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _descriptor</h3>
-					<div class="tsd-signature tsd-kind-icon">_descriptor<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/jnsmalm/pixi3d/blob/dca494b/src/gltf/gltf-asset.ts#L9">src/gltf/gltf-asset.ts:9</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="_images" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _images</h3>
-					<div class="tsd-signature tsd-kind-icon">_images<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Texture</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/jnsmalm/pixi3d/blob/dca494b/src/gltf/gltf-asset.ts#L8">src/gltf/gltf-asset.ts:8</a></li>
-						</ul>
-					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Accessors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
-					<a name="buffers" class="tsd-anchor"></a>
-					<h3>buffers</h3>
-					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> buffers<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ArrayBuffer</span><span class="tsd-signature-symbol">[]</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/jnsmalm/pixi3d/blob/dca494b/src/gltf/gltf-asset.ts#L31">src/gltf/gltf-asset.ts:31</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>The buffers used by this asset.</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ArrayBuffer</span><span class="tsd-signature-symbol">[]</span></h4>
-						</li>
-					</ul>
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_filter" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _filter</h3>
+					<div class="tsd-signature tsd-kind-icon">_filter<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ShadowFilter</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/jnsmalm/pixi3d/blob/dca494b/src/shadow/shadow-render-pass.ts#L15">src/shadow/shadow-render-pass.ts:15</a></li>
+						</ul>
+					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
-					<a name="descriptor" class="tsd-anchor"></a>
-					<h3>descriptor</h3>
-					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> descriptor<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/jnsmalm/pixi3d/blob/dca494b/src/gltf/gltf-asset.ts#L26">src/gltf/gltf-asset.ts:26</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>The descriptor used by this asset.</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
-						</li>
-					</ul>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_shader" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _shader</h3>
+					<div class="tsd-signature tsd-kind-icon">_shader<span class="tsd-signature-symbol">:</span> <a href="meshshader.html" class="tsd-signature-type">MeshShader</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/jnsmalm/pixi3d/blob/dca494b/src/shadow/shadow-render-pass.ts#L16">src/shadow/shadow-render-pass.ts:16</a></li>
+						</ul>
+					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
-					<a name="images" class="tsd-anchor"></a>
-					<h3>images</h3>
-					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> images<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Texture</span><span class="tsd-signature-symbol">[]</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/jnsmalm/pixi3d/blob/dca494b/src/gltf/gltf-asset.ts#L21">src/gltf/gltf-asset.ts:21</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>The images used by this asset.</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Texture</span><span class="tsd-signature-symbol">[]</span></h4>
-						</li>
-					</ul>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_state" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _state</h3>
+					<div class="tsd-signature tsd-kind-icon">_state<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">State</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-symbol">{ </span>blendMode<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">BLEND_MODES</span><span class="tsd-signature-symbol">; </span>clockwiseFrontFace<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol">; </span>culling<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol">; </span>depthTest<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> = Object.assign(new PIXI.State(), {depthTest: true, clockwiseFrontFace: false, culling: true, blendMode: PIXI.BLEND_MODES.NONE})</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/jnsmalm/pixi3d/blob/dca494b/src/shadow/shadow-render-pass.ts#L17">src/shadow/shadow-render-pass.ts:17</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="lights" class="tsd-anchor"></a>
+					<h3>lights</h3>
+					<div class="tsd-signature tsd-kind-icon">lights<span class="tsd-signature-symbol">:</span> <a href="shadowcastinglight.html" class="tsd-signature-type">ShadowCastingLight</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/jnsmalm/pixi3d/blob/dca494b/src/shadow/shadow-render-pass.ts#L22">src/shadow/shadow-render-pass.ts:22</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>An array of shadow casting lights.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="name" class="tsd-anchor"></a>
+					<h3>name</h3>
+					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/jnsmalm/pixi3d/blob/dca494b/src/shadow/shadow-render-pass.ts#L42">src/shadow/shadow-render-pass.ts:42</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The name for the render pass.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="renderer" class="tsd-anchor"></a>
+					<h3>renderer</h3>
+					<div class="tsd-signature tsd-kind-icon">renderer<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Renderer</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/jnsmalm/pixi3d/blob/dca494b/src/shadow/shadow-render-pass.ts#L42">src/shadow/shadow-render-pass.ts:42</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The renderer to use.</p>
+						</div>
+					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<a name="getembeddedbuffer" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> get<wbr>Embedded<wbr>Buffer</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Embedded<wbr>Buffer<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ArrayBuffer</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">SharedArrayBuffer</span></li>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="clear" class="tsd-anchor"></a>
+					<h3>clear</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">clear<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/jnsmalm/pixi3d/blob/dca494b/src/gltf/gltf-asset.ts#L84">src/gltf/gltf-asset.ts:84</a></li>
+									<li>Defined in <a href="https://github.com/jnsmalm/pixi3d/blob/dca494b/src/shadow/shadow-render-pass.ts#L69">src/shadow/shadow-render-pass.ts:69</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>value: <span class="tsd-signature-type">string</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ArrayBuffer</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">SharedArrayBuffer</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<a name="isembeddedresource" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> is<wbr>Embedded<wbr>Resource</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">is<wbr>Embedded<wbr>Resource<span class="tsd-signature-symbol">(</span>uri<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="enableshadows" class="tsd-anchor"></a>
+					<h3>enable<wbr>Shadows</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">enable<wbr>Shadows<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><a href="mesh3d.html" class="tsd-signature-type">Mesh3D</a><span class="tsd-signature-symbol"> | </span><a href="model.html" class="tsd-signature-type">Model</a>, shadowCastingLight<span class="tsd-signature-symbol">?: </span><a href="shadowcastinglight.html" class="tsd-signature-type">ShadowCastingLight</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/jnsmalm/pixi3d/blob/dca494b/src/gltf/gltf-asset.ts#L80">src/gltf/gltf-asset.ts:80</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>uri: <span class="tsd-signature-type">string</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<a name="load" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> load</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">load<span class="tsd-signature-symbol">(</span>descriptor<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, loader<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">glTFAssetResourceLoader</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="gltfasset.html" class="tsd-signature-type">glTFAsset</a></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/jnsmalm/pixi3d/blob/dca494b/src/gltf/gltf-asset.ts#L42">src/gltf/gltf-asset.ts:42</a></li>
+									<li>Defined in <a href="https://github.com/jnsmalm/pixi3d/blob/dca494b/src/shadow/shadow-render-pass.ts#L57">src/shadow/shadow-render-pass.ts:57</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Loads a new glTF asset (including resources) using the specified JSON
-									descriptor.</p>
+									<p>Enables shadows for the specified object. Adds the render pass to the
+									specified object and enables the standard material to use the casting light.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>descriptor: <span class="tsd-signature-type">any</span></h5>
+									<h5>object: <a href="mesh3d.html" class="tsd-signature-type">Mesh3D</a><span class="tsd-signature-symbol"> | </span><a href="model.html" class="tsd-signature-type">Model</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The JSON descriptor to create the asset from.</p>
+										<p>The mesh or model to enable shadows for.</p>
 									</div>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> loader: <span class="tsd-signature-type">glTFAssetResourceLoader</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> shadowCastingLight: <a href="shadowcastinglight.html" class="tsd-signature-type">ShadowCastingLight</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The resource loader to use for external resources. The
-										loader can be empty when all resources in the descriptor is embedded.</p>
+										<p>The shadow casting light to associate with the
+										object when using the standard material.</p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="gltfasset.html" class="tsd-signature-type">glTFAsset</a></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="render" class="tsd-anchor"></a>
+					<h3>render</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">render<span class="tsd-signature-symbol">(</span>meshes<span class="tsd-signature-symbol">: </span><a href="mesh3d.html" class="tsd-signature-type">Mesh3D</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/jnsmalm/pixi3d/blob/dca494b/src/shadow/shadow-render-pass.ts#L75">src/shadow/shadow-render-pass.ts:75</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>meshes: <a href="mesh3d.html" class="tsd-signature-type">Mesh3D</a><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<a name="addasrenderpass" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> add<wbr>AsRender<wbr>Pass</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>AsRender<wbr>Pass<span class="tsd-signature-symbol">(</span>renderer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Renderer</span>, name<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="shadowrenderpass.html" class="tsd-signature-type">ShadowRenderPass</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/jnsmalm/pixi3d/blob/dca494b/src/shadow/shadow-render-pass.ts#L30">src/shadow/shadow-render-pass.ts:30</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Creates a new shadow render pass using the specified renderer and adds it
+									to the standard renderer.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>renderer: <span class="tsd-signature-type">Renderer</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The renderer to use.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> name: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;shadow&quot;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The name for the render pass.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="shadowrenderpass.html" class="tsd-signature-type">ShadowRenderPass</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -428,9 +445,48 @@
 					<li class=" tsd-kind-class">
 						<a href="shadowcastinglight.html" class="tsd-kind-icon">Shadow<wbr>Casting<wbr>Light</a>
 					</li>
-					<li class=" tsd-kind-class">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class">
 						<a href="shadowrenderpass.html" class="tsd-kind-icon">Shadow<wbr>Render<wbr>Pass</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+								<a href="shadowrenderpass.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="shadowrenderpass.html#_filter" class="tsd-kind-icon">_filter</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="shadowrenderpass.html#_shader" class="tsd-kind-icon">_shader</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="shadowrenderpass.html#_state" class="tsd-kind-icon">_state</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="shadowrenderpass.html#lights" class="tsd-kind-icon">lights</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="shadowrenderpass.html#name" class="tsd-kind-icon">name</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="shadowrenderpass.html#renderer" class="tsd-kind-icon">renderer</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="shadowrenderpass.html#clear" class="tsd-kind-icon">clear</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="shadowrenderpass.html#enableshadows" class="tsd-kind-icon">enable<wbr>Shadows</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="shadowrenderpass.html#render" class="tsd-kind-icon">render</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
+								<a href="shadowrenderpass.html#addasrenderpass" class="tsd-kind-icon">add<wbr>AsRender<wbr>Pass</a>
+							</li>
+						</ul>
 					</li>
+				</ul>
+				<ul class="after-current">
 					<li class=" tsd-kind-class">
 						<a href="skin.html" class="tsd-kind-icon">Skin</a>
 					</li>
@@ -446,45 +502,9 @@
 					<li class=" tsd-kind-class">
 						<a href="transform3d.html" class="tsd-kind-icon">Transform3D</a>
 					</li>
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-class">
+					<li class=" tsd-kind-class">
 						<a href="gltfasset.html" class="tsd-kind-icon">glTFAsset</a>
-						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="gltfasset.html#constructor" class="tsd-kind-icon">constructor</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="gltfasset.html#_buffers" class="tsd-kind-icon">_buffers</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="gltfasset.html#_descriptor" class="tsd-kind-icon">_descriptor</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="gltfasset.html#_images" class="tsd-kind-icon">_images</a>
-							</li>
-							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
-								<a href="gltfasset.html#buffers" class="tsd-kind-icon">buffers</a>
-							</li>
-							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
-								<a href="gltfasset.html#descriptor" class="tsd-kind-icon">descriptor</a>
-							</li>
-							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
-								<a href="gltfasset.html#images" class="tsd-kind-icon">images</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
-								<a href="gltfasset.html#getembeddedbuffer" class="tsd-kind-icon">get<wbr>Embedded<wbr>Buffer</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
-								<a href="gltfasset.html#isembeddedresource" class="tsd-kind-icon">is<wbr>Embedded<wbr>Resource</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
-								<a href="gltfasset.html#load" class="tsd-kind-icon">load</a>
-							</li>
-						</ul>
 					</li>
-				</ul>
-				<ul class="after-current">
 					<li class=" tsd-kind-object-literal">
 						<a href="../globals.html#cubemipmaploader" class="tsd-kind-icon">Cube<wbr>Mipmap<wbr>Loader</a>
 					</li>

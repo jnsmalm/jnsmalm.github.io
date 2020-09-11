@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Pixi3D - v0.6.0</title>
+	<title>Pixi3D - v0.7.0</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="index.html" class="title">Pixi3D - v0.6.0</a>
+					<a href="index.html" class="title">Pixi3D - v0.7.0</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -56,7 +56,7 @@
 					<a href="globals.html">Globals</a>
 				</li>
 			</ul>
-			<h1>Pixi3D - v0.6.0</h1>
+			<h1>Pixi3D - v0.7.0</h1>
 		</div>
 	</div>
 </header>
@@ -70,7 +70,8 @@
 				<p>Pixi3D is a JavaScript library which makes it easy to render 3D graphics on the web. It works for both desktop and mobile web browsers and includes several components which makes it easy to create nice looking 3D scenes out-of-the-box:</p>
 				<ul>
 					<li>Load models from file or create procedural generated meshes</li>
-					<li>Supports physically-based rendering (PBR) and image-based lighting (IBL)</li>
+					<li>Physically-based rendering (PBR) and image-based lighting (IBL)</li>
+					<li>Dynamic shadows</li>
 					<li>Transformation, morphing and skeletal animations</li>
 					<li>Customized materials and shaders</li>
 					<li>Built on top of the widely used PixiJS library which makes it simple to combine 2D and 3D</li>
@@ -147,31 +148,49 @@ app.loader.load(<span class="hljs-function">(<span class="hljs-params">loader, r
     PIXI3D.Model.from(resources[<span class="hljs-string">"assets/buster_drone/scene.gltf"</span>].gltf))
 })</code></pre>
 				<p><em>Loads a glTF 2.0 file and creates a model. The silhouette of a drone should appear. For now, it will be rendered black because there is no lighting.</em></p>
-				<a href="#lighting-environment" id="lighting-environment" style="color: inherit; text-decoration: none;">
-					<h3>Lighting environment</h3>
-				</a>
-				<p>Lights are needed to illuminate the objects in the scene, otherwise they may be rendered completely black (depending on the material being used). A lighting environment contains the different components used for lighting a scene. The lighting environment can be shared across objects, or each object can have it&#39;s own. The main lighting environment is created and used by default.</p>
-				<p>There are two different kinds of lights which can be used, and punctual lights is one of them. There are a few types of punctual lights available. The &quot;point&quot; type is a light that is located at a point and emits light in all directions equally. The &quot;directional&quot; type is a light that is located infinitely far away, and emits light in one direction only. The &quot;spot&quot; type is a light that is located at a point and emits light in a cone shape. Lights have a transform and can be attached to other objects.</p>
-				<pre><code class="language-javascript"><span class="hljs-keyword">let</span> light = <span class="hljs-built_in">Object</span>.assign(<span class="hljs-keyword">new</span> PIXI3D.Light(), {
-  <span class="hljs-attr">type</span>: <span class="hljs-string">"point"</span>, <span class="hljs-attr">x</span>: <span class="hljs-number">-1</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">0</span>, <span class="hljs-attr">z</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">range</span>: <span class="hljs-number">10</span>, <span class="hljs-attr">intensity</span>: <span class="hljs-number">10</span>
-})
-PIXI3D.LightingEnvironment.main.lights.push(light)</code></pre>
-				<p><em>Adds a point light to the main lighting environment. The drone should now be illuminated by the light.</em></p>
 				<a href="#position-rotation-and-scale" id="position-rotation-and-scale" style="color: inherit; text-decoration: none;">
 					<h3>Position, rotation and scale</h3>
 				</a>
-				<p>All objects have a transform which is used for setting the position, rotation and scale of that object. The transform of an object is always relative to it&#39;s parent transform. So when changing the transform of the parent object, all of it&#39;s childrens transforms will be affected as well.</p>
+				<p>All objects in a scene have a transform which is used for setting the position, rotation and scale of that object. The transform of an object is always relative to it&#39;s parent transform. So when changing the transform of the parent object, all of it&#39;s childrens transforms will be affected as well.</p>
 				<p>Both position and scale is represented by a vector with three components (x, y, z), one for each axis. Rotation is represented by a quaternion and has four components (x, y, z, w). A quaternion is not as straight forward to use as a vector, because of that there is a method <em>setEulerAngles</em> used for changing the rotation.</p>
 				<pre><code class="language-javascript">model.position.y = <span class="hljs-number">0.3</span>
 model.scale.set(<span class="hljs-number">2</span>)
 model.rotationQuaternion.setEulerAngles(<span class="hljs-number">0</span>, <span class="hljs-number">25</span>, <span class="hljs-number">0</span>)</code></pre>
 				<p><em>Moves the model to 0.3 on the y-axis. Rotates it to 25 degrees on the y-axis and scales it on all axes.</em></p>
+				<a href="#lighting-environment" id="lighting-environment" style="color: inherit; text-decoration: none;">
+					<h3>Lighting environment</h3>
+				</a>
+				<p>Lights are needed to illuminate the objects in the scene, otherwise they may be rendered completely black (depending on the material being used). A lighting environment contains the different components used for lighting a scene. The lighting environment can be shared across objects, or each object can have it&#39;s own. The main lighting environment is created and used by default.</p>
+				<p>There are two different kinds of lights which can be used, and punctual lights is one of them. There are a few types of punctual lights available. The &quot;point&quot; type is a light that is located at a point and emits light in all directions equally. The &quot;directional&quot; type is a light that is located infinitely far away, and emits light in one direction only. The &quot;spot&quot; type is a light that is located at a point and emits light in a cone shape. Lights have a transform and can be attached to other objects.</p>
+				<pre><code class="language-javascript"><span class="hljs-keyword">let</span> dirLight = <span class="hljs-built_in">Object</span>.assign(<span class="hljs-keyword">new</span> PIXI3D.Light(), {
+  <span class="hljs-attr">type</span>: <span class="hljs-string">"directional"</span>, <span class="hljs-attr">intensity</span>: <span class="hljs-number">0.5</span>, <span class="hljs-attr">x</span>: <span class="hljs-number">-4</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">7</span>, <span class="hljs-attr">z</span>: <span class="hljs-number">-4</span>
+})
+dirLight.rotationQuaternion.setEulerAngles(<span class="hljs-number">45</span>, <span class="hljs-number">45</span>, <span class="hljs-number">0</span>)
+PIXI3D.LightingEnvironment.main.lights.push(dirLight)
+
+<span class="hljs-keyword">let</span> pointLight = <span class="hljs-built_in">Object</span>.assign(<span class="hljs-keyword">new</span> PIXI3D.Light(), { 
+  <span class="hljs-attr">type</span>: <span class="hljs-string">"point"</span>, <span class="hljs-attr">x</span>: <span class="hljs-number">-1</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">0</span>, <span class="hljs-attr">z</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">range</span>: <span class="hljs-number">10</span>, <span class="hljs-attr">intensity</span>: <span class="hljs-number">10</span>
+})
+PIXI3D.LightingEnvironment.main.lights.push(pointLight)</code></pre>
+				<p><em>Adds a directional light and a point light to the main lighting environment. The drone should now be illuminated by the light.</em></p>
 				<a href="#playing-animations" id="playing-animations" style="color: inherit; text-decoration: none;">
 					<h3>Playing animations</h3>
 				</a>
 				<p>Models can contain animations which has been created in a 3D modeling tool. There are three different kinds of animations: skeletal, morphing and transformation. Skeletal animation is often used for animating characters, but it can also be used to animate anything else as well. Morphing is used to animate per-vertex, for example to create a waving flag. Transformation animations are used for moving, rotating and scaling entire objects.</p>
 				<pre><code class="language-javascript">model.animations[<span class="hljs-number">0</span>].play()</code></pre>
 				<p><em>Starts playing the first animation in the model.</em></p>
+				<a href="#casting-shadows" id="casting-shadows" style="color: inherit; text-decoration: none;">
+					<h3>Casting shadows</h3>
+				</a>
+				<p>To enable lights to cast shadows, there are two different components needed. First is a shadow casting light, which wraps the normal light and gives it the ability to cast shadows. It has multiple settings for controlling the quality of the shadow, for example the size of the shadow texture and the softness of the shadow. Both directional and spot light types have support for casting shadows.</p>
+				<p>The second component needed, is the shadow render pass, which renders shadows using the shadow casting light. Finally, shadows must be enabled for an object to both receive and cast shadows.</p>
+				<pre><code class="language-javascript"><span class="hljs-keyword">let</span> shadowCastingLight = <span class="hljs-keyword">new</span> PIXI3D.ShadowCastingLight(
+  app.renderer, dirLight, <span class="hljs-number">512</span>, <span class="hljs-number">15</span>, <span class="hljs-number">1</span>, PIXI3D.ShadowQuality.medium)
+
+<span class="hljs-keyword">let</span> shadowPass = PIXI3D.ShadowRenderPass.addAsRenderPass(app.renderer)
+shadowPass.lights.push(shadowCastingLight)
+shadowPass.enableShadows(model, shadowCastingLight)</code></pre>
+				<p><em>Creates a shadow casting light. Also creates the shadow render pass, adds the casting light and enables shadows for the drone model.</em></p>
 				<a href="#2d-and-3d" id="2d-and-3d" style="color: inherit; text-decoration: none;">
 					<h3>2D and 3D</h3>
 				</a>
@@ -192,6 +211,10 @@ app.ticker.add(<span class="hljs-function"><span class="hljs-params">()</span> =
 				<p>The camera is used for controlling from which position and direction the 3D scene is rendered, it has a position and rotation which is used for changing the view. Like any other object which has a transform, it can be attached to another object. The camera can also be directly controlled by using a mouse or trackpad. The main camera is created and used by default.</p>
 				<pre><code class="language-javascript"><span class="hljs-keyword">let</span> control = <span class="hljs-keyword">new</span> PIXI3D.CameraOrbitControl(app.view)</code></pre>
 				<p><em>Gives the user orbit control over the main camera using mouse/trackpad. Hold left mouse button and drag to orbit, use scroll wheel to zoom in/out.</em></p>
+				<a href="#api" id="api" style="color: inherit; text-decoration: none;">
+					<h2>API</h2>
+				</a>
+				<p>The API documentation is available at <a href="https://pixi3d.org/docs/">https://pixi3d.org/docs/</a></p>
 				<a href="#building" id="building" style="color: inherit; text-decoration: none;">
 					<h2>Building</h2>
 				</a>
@@ -211,6 +234,9 @@ app.ticker.add(<span class="hljs-function"><span class="hljs-params">()</span> =
 				<ul class="before-current">
 					<li class=" tsd-kind-enum">
 						<a href="enums/lighttype.html" class="tsd-kind-icon">Light<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/shadowquality.html" class="tsd-kind-icon">Shadow<wbr>Quality</a>
 					</li>
 					<li class=" tsd-kind-enum">
 						<a href="enums/standardmaterialalphamode.html" class="tsd-kind-icon">Standard<wbr>Material<wbr>Alpha<wbr>Mode</a>
@@ -274,6 +300,12 @@ app.ticker.add(<span class="hljs-function"><span class="hljs-params">()</span> =
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/pickingmanager.html" class="tsd-kind-icon">Picking<wbr>Manager</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/shadowcastinglight.html" class="tsd-kind-icon">Shadow<wbr>Casting<wbr>Light</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/shadowrenderpass.html" class="tsd-kind-icon">Shadow<wbr>Render<wbr>Pass</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/skin.html" class="tsd-kind-icon">Skin</a>

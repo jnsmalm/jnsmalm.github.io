@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>LightType | Pixi3D - v0.7.0</title>
+	<title>ShadowQuality | Pixi3D - v0.7.0</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="lighttype.html">LightType</a>
+					<a href="shadowquality.html">ShadowQuality</a>
 				</li>
 			</ul>
-			<h1>Enumeration LightType</h1>
+			<h1>Enumeration ShadowQuality</h1>
 		</div>
 	</div>
 </header>
@@ -73,9 +73,9 @@
 						<section class="tsd-index-section ">
 							<h3>Enumeration members</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="lighttype.html#directional" class="tsd-kind-icon">directional</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="lighttype.html#point" class="tsd-kind-icon">point</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="lighttype.html#spot" class="tsd-kind-icon">spot</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="shadowquality.html#high" class="tsd-kind-icon">high</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="shadowquality.html#low" class="tsd-kind-icon">low</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="shadowquality.html#medium" class="tsd-kind-icon">medium</a></li>
 							</ul>
 						</section>
 					</div>
@@ -84,49 +84,47 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Enumeration members</h2>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="directional" class="tsd-anchor"></a>
-					<h3>directional</h3>
-					<div class="tsd-signature tsd-kind-icon">directional<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;directional&quot;</span></div>
+					<a name="high" class="tsd-anchor"></a>
+					<h3>high</h3>
+					<div class="tsd-signature tsd-kind-icon">high<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;high&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jnsmalm/pixi3d/blob/dca494b/src/lighting/light-type.ts#L11">src/lighting/light-type.ts:11</a></li>
+							<li>Defined in <a href="https://github.com/jnsmalm/pixi3d/blob/dca494b/src/shadow/shadow-quality.ts#L13">src/shadow/shadow-quality.ts:13</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>A light that is located infinitely far away, and emits light in one
-							direction only.</p>
+							<p>High quality (32-bit) shadows.</p>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="point" class="tsd-anchor"></a>
-					<h3>point</h3>
-					<div class="tsd-signature tsd-kind-icon">point<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;point&quot;</span></div>
+					<a name="low" class="tsd-anchor"></a>
+					<h3>low</h3>
+					<div class="tsd-signature tsd-kind-icon">low<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;low&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jnsmalm/pixi3d/blob/dca494b/src/lighting/light-type.ts#L17">src/lighting/light-type.ts:17</a></li>
+							<li>Defined in <a href="https://github.com/jnsmalm/pixi3d/blob/dca494b/src/shadow/shadow-quality.ts#L5">src/shadow/shadow-quality.ts:5</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>A light that is located at a point and emits light in all directions
-							equally.</p>
+							<p>Low quality (8-bit) shadows.</p>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="spot" class="tsd-anchor"></a>
-					<h3>spot</h3>
-					<div class="tsd-signature tsd-kind-icon">spot<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;spot&quot;</span></div>
+					<a name="medium" class="tsd-anchor"></a>
+					<h3>medium</h3>
+					<div class="tsd-signature tsd-kind-icon">medium<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;medium&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jnsmalm/pixi3d/blob/dca494b/src/lighting/light-type.ts#L5">src/lighting/light-type.ts:5</a></li>
+							<li>Defined in <a href="https://github.com/jnsmalm/pixi3d/blob/dca494b/src/shadow/shadow-quality.ts#L9">src/shadow/shadow-quality.ts:9</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>A light that is located at a point and emits light in a cone shape.</p>
+							<p>Medium quality (16-bit) shadows.</p>
 						</div>
 					</div>
 				</section>
@@ -142,27 +140,27 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-enum">
+						<a href="lighttype.html" class="tsd-kind-icon">Light<wbr>Type</a>
+					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-enum">
-						<a href="lighttype.html" class="tsd-kind-icon">Light<wbr>Type</a>
+						<a href="shadowquality.html" class="tsd-kind-icon">Shadow<wbr>Quality</a>
 						<ul>
 							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="lighttype.html#directional" class="tsd-kind-icon">directional</a>
+								<a href="shadowquality.html#high" class="tsd-kind-icon">high</a>
 							</li>
 							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="lighttype.html#point" class="tsd-kind-icon">point</a>
+								<a href="shadowquality.html#low" class="tsd-kind-icon">low</a>
 							</li>
 							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="lighttype.html#spot" class="tsd-kind-icon">spot</a>
+								<a href="shadowquality.html#medium" class="tsd-kind-icon">medium</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-enum">
-						<a href="shadowquality.html" class="tsd-kind-icon">Shadow<wbr>Quality</a>
-					</li>
 					<li class=" tsd-kind-enum">
 						<a href="standardmaterialalphamode.html" class="tsd-kind-icon">Standard<wbr>Material<wbr>Alpha<wbr>Mode</a>
 					</li>
